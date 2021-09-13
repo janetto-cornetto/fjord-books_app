@@ -35,3 +35,14 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+
+<% @posts.each do |post| %>
+ <div class="panel panel-success">
+   <div class="panel-body">
+    <%= link_to(post.content,"/posts/#{post.id}") %>
+   </div>
+   <div class="panel-footer">content_description</div>
+ </div>
+<% end %>
+<%= paginate @posts %>

@@ -5,8 +5,10 @@ class BooksController < ApplicationController
 
   # GET /books
   # GET /books.json
+  # kaminari pagination
   def index
-    @books = Book.all
+    # @books = Book.all
+    @books = Book.page(params[:page]).per(2)
   end
 
   # GET /books/1
